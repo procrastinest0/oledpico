@@ -8,8 +8,8 @@ MicroPython project to drive a 0.96" 128x64 I2C OLED display with a Raspberry Pi
 |----------|----------------|
 | VCC      | 3V3 (pin 36)   |
 | GND      | GND (pin 38)   |
-| SDA      | GP0 (pin 1)    |
-| SCL      | GP1 (pin 2)    |
+| SDA      | GP8 (pin 11)   |
+| SCL      | GP9 (pin 12)   |
 
 ## Setup
 
