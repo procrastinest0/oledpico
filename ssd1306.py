@@ -1,5 +1,6 @@
 from micropython import const
 import framebuf
+import time
 
 SET_CONTRAST = const(0x81)
 SET_ENTIRE_ON = const(0xA4)
@@ -52,6 +53,7 @@ class SSD1306(framebuf.FrameBuffer):
             SET_DISP | 0x01,
         ):
             self.write_cmd(cmd)
+            time.sleep_ms(10)
         self.fill(0)
         self.show()
 
