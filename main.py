@@ -1,9 +1,9 @@
-from machine import Pin, I2C
+from machine import Pin, SoftI2C
 import ssd1306
 import time
 
-# Initialize I2C on bus 1: GP10 = SDA, GP11 = SCL
-i2c = I2C(1, sda=Pin(10), scl=Pin(11), freq=400000)
+# Software I2C with internal pull-ups on GP10 (SDA) and GP11 (SCL)
+i2c = SoftI2C(sda=Pin(10, Pin.PULL_UP), scl=Pin(11, Pin.PULL_UP), freq=100000)
 time.sleep(0.5)
 
 # 0.96" OLED — try 128x32 if 128x64 gives EIO
