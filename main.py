@@ -6,8 +6,8 @@ import time
 i2c = I2C(1, sda=Pin(10), scl=Pin(11), freq=400000)
 time.sleep(0.5)
 
-# 0.96" OLED is 128x64 pixels
-oled = ssd1306.SSD1306_I2C(128, 64, i2c)
+# 0.96" OLED — try 128x32 if 128x64 gives EIO
+oled = ssd1306.SSD1306_I2C(128, 32, i2c)
 
 # Clear the display
 oled.fill(0)
